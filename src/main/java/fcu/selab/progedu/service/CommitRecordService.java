@@ -119,7 +119,7 @@ public class CommitRecordService {
   @POST
   @Path("update")
   @Consumes(MediaType.APPLICATION_FORM_URLENCODED)
-  public Response updateCommitResult(@FormParam("user") String username,
+  public Response updateCommitRecord(@FormParam("user") String username,
       @FormParam("proName") String assignmentName) throws ParseException {
 
     JSONObject ob = new JSONObject();
@@ -158,4 +158,5 @@ public class CommitRecordService {
       db.deleteRecord(auId);
     }
   }
+
 }

@@ -35,10 +35,11 @@ public class CommitRecordDbManager {
   public void insertCommitRecord(int auId, int commitNumber, StatusEnum status, Date time) {
     String sql = "INSERT INTO Commit_Record" + "(auId, commitNumber, status, time) "
         + "VALUES(?, ?, ?, ?)";
-    int statusId = csDb.getStatusIdByName(status.getType());
-    Timestamp date = new Timestamp(time.getTime());
+    
     try (Connection conn = database.getConnection();
         PreparedStatement preStmt = conn.prepareStatement(sql)) {
+      int statusId = csDb.getStatusIdByName(status.getType());
+      Timestamp date = new Timestamp(time.getTime());
       preStmt.setInt(1, auId);
       preStmt.setInt(2, commitNumber);
       preStmt.setInt(3, statusId);
