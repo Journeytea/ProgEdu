@@ -53,7 +53,7 @@ public class WebAssignment extends AssignmentType {
 
       CourseConfig courseConfig = CourseConfig.getInstance();
       String progEduApiUrl = courseConfig.getTomcatServerIp() + courseConfig.getBaseuri()
-          + "/webapi";
+          + "/webapi/commits/screenshot/updateURL";
       String projectUrl = gitlabConfig.getGitlabHostUrl() + "/" + username + "/" + projectName
           + ".git";
       String updateDbUrl = progEduApiUrl + "/commits/update";
